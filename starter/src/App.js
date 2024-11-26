@@ -27,19 +27,25 @@ function App() {
           </div>
         </div>
       ) : (
+        //This sets up the Three sections currently reading, want to read and read
+        //Main Page
         <div className="list-books">
           <div className="list-books-title">
             <h1>MyReads</h1>
           </div>
           <div className="list-books-content">
-            <div>
+            /*START OF BOOKSHELF*/
+            <div>              
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Currently Reading</h2>
                 <div className="bookshelf-books">
+                  //BEGINNING OF CURRENT READING ORDERED LIST
                   <ol className="books-grid">
+                    //FIRST ITEM
                     <li>
                       <div className="book">
                         <div className="book-top">
+                          //BOOK PICTURE
                           <div
                             className="book-cover"
                             style={{
@@ -49,6 +55,7 @@ function App() {
                                 'url("http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api")',
                             }}
                           ></div>
+                          //BOOK SHELF SECTION SELECTOR
                           <div className="book-shelf-changer">
                             <select>
                               <option value="none" disabled>
@@ -63,10 +70,12 @@ function App() {
                             </select>
                           </div>
                         </div>
+                        //TEXT BELOW BOOK
                         <div className="book-title">To Kill a Mockingbird</div>
                         <div className="book-authors">Harper Lee</div>
                       </div>
                     </li>
+                    //SECOND ITEM
                     <li>
                       <div className="book">
                         <div className="book-top">
@@ -100,6 +109,7 @@ function App() {
                   </ol>
                 </div>
               </div>
+              //WANT TO READ SECTION
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Want to Read</h2>
                 <div className="bookshelf-books">
@@ -169,6 +179,7 @@ function App() {
                   </ol>
                 </div>
               </div>
+              //READ SECTION
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Read</h2>
                 <div className="bookshelf-books">
@@ -272,6 +283,7 @@ function App() {
               </div>
             </div>
           </div>
+          //SEARCH BUTTON
           <div className="open-search">
             <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
           </div>
