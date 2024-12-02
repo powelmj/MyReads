@@ -271,7 +271,7 @@ function App() {
               </div>
             </div>
           </div>
-          //SEARCH BUTTON
+          
           <div className="open-search">
             <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
           </div>
