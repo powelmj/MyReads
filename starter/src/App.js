@@ -1,8 +1,12 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "./Search";
+import * as BooksAPI from "./BooksAPI";
 
 function App() {
+  //Books state - list of books.
+  const [books,setBooks] = useState([]);
+  //show Search page state
   const [showSearchPage, setShowSearchpage] = useState(false);
 
   const handleSearchClick=()=>{
@@ -10,10 +14,16 @@ function App() {
     setShowSearchpage(!showSearchPage);
   };
 
+  //Fetch books on initial load
+  useEffect(() =>{
+    BooksAPI.getAll().then((books)=>setBooks(books));
+    console.log(books);
+  },[]);
+
   return (
     <div className="app">
       {showSearchPage ? (
-      <Search showSearchPage={showSearchPage} onClose={() => setShowSearchpage(false)}/>
+      <Search books={books} showSearchPage={showSearchPage} onClose={() => setShowSearchpage(false)}/>
       ) : (
         //This sets up the Three sections currently reading, want to read and read
         //Main Page
